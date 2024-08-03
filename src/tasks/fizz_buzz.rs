@@ -1,12 +1,9 @@
 pub fn run() {
-    let number: i32 = 30;
-
-    for i in 1..=number {
-        match (i % 3, i % 5) {
-            (0, 0) => println!("{} : FizzBuzz", i),
-            (0, _) => println!("{} : Fizz", i),
-            (_, 0) => println!("{} : Buzz", i),
-            _ => println!("{}", i),
-        }
-    }
+    let res = (1..=100).fold(format!(""), |buf, x| match (x % 3, x % 5) {
+        (0, 0) => format!("{}FizzBuzz\n", buf),
+        (0, _) => format!("{}Fizz\n", buf),
+        (_, 0) => format!("{}Buzz\n", buf),
+        _ => format!("{}{}\n", buf, x),
+    });
+    println!("{}", res);
 }
