@@ -1,5 +1,7 @@
-mod fizz_buzz;
-mod guessing_game;
+mod tasks;
+
+use crate::tasks::fizz_buzz;
+use crate::tasks::guessing_game;
 
 fn main() {
     println!("1. 数当てゲーム");
